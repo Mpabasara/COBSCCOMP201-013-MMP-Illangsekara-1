@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>644077692475-0tcdpenh0o0obpjn7bnkqtot90kbh6mv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.644077692475-0tcdpenh0o0obpjn7bnkqtot90kbh6mv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCMHgt0D0rDcSopJJI245mbIIMmhOpIWNs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>644077692475</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pabasara.HealthFood</string>
+	<key>PROJECT_ID</key>
+	<string>foodapp-843ab</string>
+	<key>STORAGE_BUCKET</key>
+	<string>foodapp-843ab.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:644077692475:ios:37da9e23d1adef32e05e1e</string>
+	<key>DATABASE_URL</key>
+	<string>https://foodapp-843ab-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+</dict>
+</plist>
