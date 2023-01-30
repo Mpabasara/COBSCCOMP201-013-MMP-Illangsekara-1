@@ -10,6 +10,7 @@ import SwiftUI
 
 struct CustomButton: View {
     @State var btnTxt : String = "";
+     @State var corner : CGFloat = 50;
     var body: some View {
         Text(btnTxt)
         .fontWeight(.bold)
@@ -17,7 +18,7 @@ struct CustomButton: View {
         .padding()
         .frame(maxWidth: .infinity)
         .background(Color("colorBtn"))
-        .cornerRadius(50.0)
+        .cornerRadius(corner)
         .padding(.vertical)
     }
 }

@@ -9,5 +9,7 @@
 import Foundation
 class AppData: ObservableObject{
     @Published var isLoggedIn = false;
+    @Published var appLoaded = false;
     @Published var userId : String = ""
+    @Published var user : UserModel?;
 }

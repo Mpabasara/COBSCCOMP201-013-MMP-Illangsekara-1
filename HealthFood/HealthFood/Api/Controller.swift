@@ -27,8 +27,9 @@ struct Controller {
         Auth.auth().createUser(withEmail: email, password: password) {(res, error) in
             if let user = res?.user {
                 let id=Int64((Date().timeIntervalSince1970 * 1000.0).rounded())
-                let data    =  ["regid":id,
+                let data    =  ["userid":id,
                                 "name":name,
+                                "email":email,
                                 "gender":gender] as [String : Any]
                 
                 var db: DatabaseReference!
@@ -40,4 +41,58 @@ struct Controller {
             }
         }
     }
+    
+    
+    func getFoods(category: String,completionBlock: @escaping (_ success: [FoodModel]) -> Void) {
+        
+        var foodList:[FoodModel] = []
+        var db: DatabaseReference!
+        db = Database.database().reference()
+        let uid = Auth.auth().currentUser?.uid
+        
+        db.child(category).queryOrderedByKey().observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                
+                let placeDict = snap.value as! [String: Any]
+                let img = placeDict["img"] as! String
+                let name = placeDict["name"] as! String
+                let description = placeDict["description"] as! String
+                let calories = placeDict["calories"] as! Int
+                let id = placeDict["id"] as! String
+                
+                let val = placeDict[uid ?? "id"] ?? ""
+                
+                foodList.append(FoodModel(id: id, img: img, name: name,calories:calories,marked:val as! String=="marked",description: description))
+            }
+            completionBlock(foodList)
+        }
+        
+    }
+    
+    
+    func getCurLoginUser(completionBlock: @escaping (_ success: UserModel,Int) -> Void){
+        var db: DatabaseReference!
+        db = Database.database().reference()
+        guard let id = Auth.auth().currentUser?.uid else {
+            completionBlock(UserModel(id: "0", userid:0,gender: "",name: "",email: ""),0)
+            return
+        }
+        db.child("users").child(id).observeSingleEvent(of: .value, with: { (data) in
+            let user = data.value as! [String: Any]
+            completionBlock(UserModel(id: id, userid: user["userid"] as! Int,gender: user["gender"] as! String,name: user["name"] as! String,email: user["email"] as! String),1)
+        })
+        
+    }
+    
+    
+    func markAsFavourite(category: String,id:String,user:UserModel){
+        print(Auth.auth().currentUser!.uid)
+        Database.database().reference().child(category).child(id).child(Auth.auth().currentUser!.uid).setValue("marked")
+    }
+    
+    func signOut(){
+        try! Auth.auth().signOut();
+    }
+    
 }

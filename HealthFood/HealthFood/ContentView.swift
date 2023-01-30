@@ -9,9 +9,23 @@
 import SwiftUI
 
 struct ContentView: View {
-     @ObservedObject var appData : AppData;
-    var body: some View {
-        MainUIView(appData: appData)
+    let controller = Controller();
+    @ObservedObject var appData : AppData;
+    var body: some View {MainUIView(appData: appData).onAppear(){
+        self.controller.getCurLoginUser{(user,i) -> Void in
+            print(user)
+            print("user")
+            
+            if(i==1){
+                self.appData.isLoggedIn = true;
+                self.appData.appLoaded = true;
+                self.appData.user = user;
+            }else{
+                self.appData.appLoaded = true;
+            }
+            
+        }
+        }
     }
 }
 

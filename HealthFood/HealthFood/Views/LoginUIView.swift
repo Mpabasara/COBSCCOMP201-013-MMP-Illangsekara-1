@@ -50,9 +50,14 @@ struct LoginUIView: View {
                     self.controller.login(email: self.email, password: self.password) {(success) in
                         
                         if(success){
-                            self.appData.isLoggedIn = true;
-                            self.presentationMode.wrappedValue.dismiss()
-                            
+                            self.controller.getCurLoginUser{(user,i) -> Void in
+                                print(user)
+                                print("user")
+                                self.appData.appLoaded = true;
+                                self.appData.isLoggedIn = true;
+                                self.appData.user = user;
+                                self.presentationMode.wrappedValue.dismiss()
+                            }
                         }else{
                             self.alertMsg = "Invalid Email or Password";
                             self.showToast.toggle()
@@ -60,8 +65,10 @@ struct LoginUIView: View {
                     }
                     
                 }, label:{
-                     CustomButton(btnTxt: "Sign In")
-                })
+                    CustomButton(btnTxt: "Sign In")
+                }).alert(isPresented: $showToast) {
+                    Alert(title: Text(alertMsg))
+                }
             }.padding(.top, 20.0)
             
             NavigationLink(
@@ -75,16 +82,10 @@ struct LoginUIView: View {
             Button(action:{
                 UIApplication.shared.open(URL(string: "https://www.google.lk")!)
             }, label:{
-                Text("Terms & Conditions").fontWeight(.regular).padding()
+                Text("Terms & Condition").fontWeight(.regular)
             })
         }.padding(10.0)
-            .onAppear {
-                
-        }
-    }
-    
-    
-    
+    }  
 }
 
 

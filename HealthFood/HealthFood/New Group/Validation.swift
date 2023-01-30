@@ -18,7 +18,7 @@ struct Validation{
     
     
     func validatePassword(_ password: String) -> Bool {
-        if  6 > password.trimmingCharacters(in: CharacterSet.whitespaces).count {
+        if  6 >= password.trimmingCharacters(in: CharacterSet.whitespaces).count {
             return false
         }else{
             return true;

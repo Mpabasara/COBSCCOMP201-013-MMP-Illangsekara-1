@@ -30,20 +30,20 @@ struct SignUpUIView: View {
                 VStack(alignment: .center){
                     VStack{
                         Text("Email").font(.title)
-                        TextField("",text: self.$email).keyboardType(.emailAddress).autocapitalization(.none).frame(width: 250.0, height: 30.0).background(Color(.secondarySystemBackground)).cornerRadius(50.0)
+                        TextField("",text: self.$email).keyboardType(.emailAddress).autocapitalization(.none).frame(width: 250.0, height: 40).background(Color(.secondarySystemBackground)).cornerRadius(20)
                         
                         Text("Password").font(.title)
                         SecureField("",text: self.$password)
-                            .frame(width: 250.0, height: 30.0).background(Color(.secondarySystemBackground))
-                    }.padding(.top, 20.0).cornerRadius(50.0)
+                            .frame(width: 250.0, height: 40).background(Color(.secondarySystemBackground))
+                    }.padding(.top, 20.0).cornerRadius(20)
                     
                     Text("Name").font(.title)
                     TextField("",text: self.$name)
-                        .frame(width: 250.0, height: 30.0).background(Color(.secondarySystemBackground)).cornerRadius(50.0)
+                        .frame(width: 250.0, height: 40).background(Color(.secondarySystemBackground)).cornerRadius(20)
                     
                     Text("Gender").font(.title)
                     TextField("",text: self.$gender)
-                        .frame(width: 250.0, height: 30.0).background(Color(.secondarySystemBackground)).cornerRadius(50.0)
+                        .frame(width: 250.0, height: 40).background(Color(.secondarySystemBackground)).cornerRadius(20)
                     
                     VStack{
                         Button(action:{
@@ -52,7 +52,9 @@ struct SignUpUIView: View {
                         }, label:{
                             CustomButton(btnTxt: "Register")
                             
-                        })
+                        }).alert(isPresented: $showToast) {
+                            Alert(title: Text(alertMsg))
+                        }
                     }.padding(.top, 20.0)
                 }.padding(10.0)
                 
@@ -63,28 +65,34 @@ struct SignUpUIView: View {
     func registerUser(){
         if(self.email.isEmpty){
             self.alertMsg = "Please Enter Email";
+             self.showToast.toggle()
             return;
         }
         
         if(!self.validation.validateEmail(self.email)){
             self.alertMsg =  "Invalid Email";
+             self.showToast.toggle()
             return;
         }
         if(self.password.isEmpty){
             self.alertMsg = "Please Enter Password";
+             self.showToast.toggle()
             return;
         }
         if(!self.validation.validatePassword(self.password)){
-            self.alertMsg = "Password at least 8 characters";
+            self.alertMsg = "Password at least 6 characters";
+             self.showToast.toggle()
             return;
         }
         
         self.controller.registerUser(email: self.email, password: self.password, name: self.name, gender: self.gender) {(success) in
             if(success){
                 self.alertMsg = "Success";
+                 self.showToast.toggle()
                 self.presentationMode.wrappedValue.dismiss()
             }else{
                 self.alertMsg =  "Failed"
+                 self.showToast.toggle()
             }
         }
     }

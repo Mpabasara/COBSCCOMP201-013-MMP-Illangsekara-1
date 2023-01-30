@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "chorizo-mozarella-gnocchi-bake-cropped-9ab73a3-1.jpg",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "chorizo-mozarella-gnocchi-bake-cropped-9ab73a3-2.jpg",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
