@@ -37,9 +37,9 @@ struct MainUIView: View {
                     }.padding(.vertical, 10.0).frame(maxWidth: .infinity)
                     
                     VStack{
-                        ForEach(self.foodList, id: \.id) { result in
-                            FoodView(food:result, appData: self.appData,category:self.selected_cate)
-                        }
+//                        ForEach(self.foodList, id: \.id) { result in
+//                            FoodView(food:result, appData: self.appData,category:self.selected_cate)
+//                        }
                     }
                 }.navigationBarTitle("Home", displayMode: .inline)
                     .navigationBarItems(leading:
@@ -54,23 +54,7 @@ struct MainUIView: View {
                         }
                         , trailing:
                         HStack {
-                            if(appData.isLoggedIn){
-                                NavigationLink(
-                                    destination: MyProfileUIView(appData: appData),
-                                    isActive: $mainView,
-                                    label: {
-                                        Image(systemName: "person")
-                                            .imageScale(.large)
-                                            .foregroundColor(Color("colorIconSelected"))
-                                })
-                            }else{
-                                NavigationLink(
-                                    destination: LoginUIView(appData: appData),
-                                    label: {
-                                        Image(systemName: "person").imageScale(.large)
-                                            .foregroundColor(Color("colorIcon"))
-                                })
-                            }
+                            
                         })
                 
             }

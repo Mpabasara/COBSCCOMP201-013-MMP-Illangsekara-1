@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MyProfileUIView: View {
     @ObservedObject var appData : AppData;
-    @State var user : UserModel =  UserModel(id: "", userid: 0 ,gender: "",name: "",email: "")
+    @State var user : UserModel =  UserModel(id: "", userid: 0 ,phone: "",name: "",email: "")
     @Environment(\.presentationMode) var presentationMode
     var controller = Controller();
     var body: some View {
@@ -31,7 +31,7 @@ struct MyProfileUIView: View {
                         Text(appData.user?.name ?? "" )}
                     HStack {Text("Gender");
                         Spacer(minLength: 100);
-                        Text(appData.user?.gender ?? "" )}
+                        Text(appData.user?.phone ?? "" )}
                 }
                 
                 

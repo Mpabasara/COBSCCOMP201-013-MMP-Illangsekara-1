@@ -10,7 +10,7 @@ import Foundation
 struct UserModel: Identifiable {
     var id: String = UUID().uuidString
     var userid : Int
-    var gender: String
+    var phone: String
     var name: String
     var email: String
 }

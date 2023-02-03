@@ -26,11 +26,7 @@ struct FavouriteUIView: View {
                 VStack{
                     
                     Text("My Favorite").font(.headline).fontWeight(.bold)
-                    ForEach(0..<foodList.count, id: \.self) { index in
-                        VStack{
-                            FoodView(food:self.foodList[index],appData:self.appData,showFooter: false)
-                        }
-                    }
+                    
                 }
             }
         }.onAppear(){

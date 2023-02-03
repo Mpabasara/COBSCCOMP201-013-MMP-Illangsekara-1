@@ -85,7 +85,7 @@ struct SignUpUIView: View {
             return;
         }
         
-        self.controller.registerUser(email: self.email, password: self.password, name: self.name, gender: self.gender) {(success) in
+        self.controller.registerUser(email: self.email, password: self.password, name: self.name, phone: self.gender) {(success) in
             if(success){
                 self.alertMsg = "Success";
                  self.showToast.toggle()
