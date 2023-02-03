@@ -36,7 +36,6 @@
 		0988F6AB2984351D00DBB755 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0988F6AA2984351D00DBB755 /* Kingfisher */; };
 		09C5D74029780A7600D7C214 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D73F29780A7600D7C214 /* AppDelegate.swift */; };
 		09C5D74229780A7600D7C214 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D74129780A7600D7C214 /* SceneDelegate.swift */; };
-		09C5D74429780A7600D7C214 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C5D74329780A7600D7C214 /* ContentView.swift */; };
 		09C5D74629780A8200D7C214 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D74529780A8200D7C214 /* Assets.xcassets */; };
 		09C5D74929780A8200D7C214 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D74829780A8200D7C214 /* Preview Assets.xcassets */; };
 		09C5D74C29780A8200D7C214 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09C5D74A29780A8200D7C214 /* LaunchScreen.storyboard */; };
@@ -94,7 +93,6 @@
 		09C5D73C29780A7600D7C214 /* HealthFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09C5D73F29780A7600D7C214 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09C5D74129780A7600D7C214 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		09C5D74329780A7600D7C214 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09C5D74529780A8200D7C214 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C5D74829780A8200D7C214 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09C5D74B29780A8200D7C214 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				09C5D73F29780A7600D7C214 /* AppDelegate.swift */,
 				092F7C522982E12000EECFE5 /* GoogleService-Info.plist */,
 				09C5D74129780A7600D7C214 /* SceneDelegate.swift */,
-				09C5D74329780A7600D7C214 /* ContentView.swift */,
 				09C5D74529780A8200D7C214 /* Assets.xcassets */,
 				09C5D74A29780A8200D7C214 /* LaunchScreen.storyboard */,
 				09C5D74D29780A8200D7C214 /* Info.plist */,
@@ -585,7 +582,6 @@
 				0938C1E2298940B300EDB1A1 /* Colors.swift in Sources */,
 				092D18432987661000B883AE /* ViewController.swift in Sources */,
 				0938C21E298983DB00EDB1A1 /* FoodViewLayout.swift in Sources */,
-				09C5D74429780A7600D7C214 /* ContentView.swift in Sources */,
 				0937789A29821426007F8F06 /* AppData.swift in Sources */,
 				0938C2282989872200EDB1A1 /* FoodCollectionViewCell.swift in Sources */,
 				0937A2B3298BEEFB00776203 /* FoodViewController.swift in Sources */,

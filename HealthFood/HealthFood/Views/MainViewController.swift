@@ -157,22 +157,22 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! DiscountCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! FoodCollectionViewCell
             cell.data = foodListToday[indexPath.row]
             return cell
         }
         else if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:FoodCollectionViewCell.reusableId, for: indexPath) as! DiscountCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:FoodCollectionViewCell.reusableId, for: indexPath) as! FoodCollectionViewCell
             cell.data = foodListCommon[indexPath.row]
             return cell
         }
         else if indexPath.section == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! DiscountCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! FoodCollectionViewCell
             cell.data = foodListDiet[indexPath.row]
             return cell
         }
         else if indexPath.section == 3 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! DiscountCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FoodCollectionViewCell.reusableId, for: indexPath) as! FoodCollectionViewCell
             cell.data = foodListHealth[indexPath.row]
             return cell
         }
